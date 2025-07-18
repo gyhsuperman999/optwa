@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Converter Pro</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/icon.png" />
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <div class="header">
+            <div class="logo-title">Unit Converter Pro</div>
+            <div class="slogan">Accurate & Instant Unit Conversion · 100% Offline · Modern UI</div>
+        </div>
+        <div class="card">
+            <div class="algos">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="length">Length</option>
+                    <option value="weight">Weight</option>
+                    <option value="temperature">Temperature</option>
+                    <option value="area">Area</option>
+                    <option value="volume">Volume</option>
+                    <option value="speed">Speed</option>
+                </select>
+            </div>
+            <div id="unit-row" class="unit-row"></div>
+            <div class="btn-row">
+                <button class="action-btn" id="swap-btn" title="Swap Units">&#x21C4; Swap</button>
+            </div>
+            <div class="result-row">
+                <div id="convert-result" class="convert-result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

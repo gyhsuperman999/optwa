@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encryptor Pro - String Encryption/Decryption Tool</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="bg">
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1 class="logo-title">Encryptor Pro</h1>
+            <p class="slogan">Multi-Algorithm String Encryption/Decryption - Pure Frontend · Futuristic · Secure &amp; Private</p>
+        </div>
+        <div class="card">
+            <div class="algos">
+                <label>Select Algorithm:</label>
+                <select id="algo">
+                    <option value="base64">Base64 Encode/Decode</option>
+                    <option value="rot13">ROT13 Letter Shift</option>
+                    <option value="caesar">Caesar Cipher</option>
+                    <option value="aes">AES Symmetric Encryption</option>
+                    <option value="xor">XOR Encryption</option>
+                    <option value="md5">MD5 Hash</option>
+                    <option value="sha256">SHA256 Hash</option>
+                    <option value="url">URL Encode/Decode</option>
+                    <option value="atbash">Atbash Substitution</option>
+                    <option value="morse">Morse Code</option>
+                </select>
+                <span id="param-row"></span>
+            </div>
+            <textarea id="input" class="main-textarea" placeholder="Enter the text to encrypt/decrypt"></textarea>
+            <div class="btn-row">
+                <button id="encrypt-btn" class="action-btn">Encrypt</button>
+                <button id="decrypt-btn" class="action-btn">Decrypt</button>
+            </div>
+            <div class="result-row">
+                <textarea id="output" class="main-textarea" readonly placeholder="Result Output"></textarea>
+                <button id="copy-btn" class="copy-btn">Copy Result</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

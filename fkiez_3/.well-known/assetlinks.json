@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gyhtwa.tool3",
+      "sha256_cert_fingerprints": [
+        "A9:29:86:1D:ED:71:F8:74:87:C4:06:E0:84:5E:0D:82:D4:37:B6:BB:53:B5:BC:5E:3C:7C:7C:A9:80:87:5D:AD"
+      ]
+    }
+  }
+]

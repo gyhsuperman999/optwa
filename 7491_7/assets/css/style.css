@@ -1,0 +1,303 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    height: 100%;
+}
+
+.bg {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 70% 12%, #b20ff2 0%, #243a52 60%, #4357a8 100%);
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 从顶部开始 */
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo-title {
+    font-size: 2.2em;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    background: linear-gradient(90deg, #00f0ff 10%, #6e94ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.slogan {
+    color: #78f6ea;
+    font-size: 1.03em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.card {
+    background: rgba(186, 9, 186, 0.98);
+    border-radius: 22px;
+    box-shadow: 0 4px 22px #00e6ff23;
+    padding: 25px;
+    width: 100%;
+    max-width: 500px; /* 稍微减小最大宽度 */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.algos {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.algos label {
+    color: #20f7c6;
+    font-weight: 700;
+    white-space: nowrap;
+    font-size: 1.1em;
+}
+
+#category {
+    flex: 1;
+    min-width: 150px;
+}
+
+#category, .unit-row select, .unit-row input {
+    border-radius: 7px;
+    padding: 8px 12px;
+    background: #1e3047;
+    color: #9eedff;
+    border: 1.3px solid #40ebff77;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#category:focus, .unit-row select:focus, .unit-row input:focus {
+    border-color: #00f0ff;
+}
+
+.unit-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.unit-input {
+    justify-self: stretch;
+}
+
+.unit-row span {
+    font-size: 1.5em;
+    color: #20f7c6;
+    font-weight: bold;
+    justify-self: center;
+}
+
+.arrow-span {
+    font-size: 1.5em !important;
+    color: #20f7c6 !important;
+    font-weight: bold !important;
+    justify-self: center !important;
+    margin: 0 5px !important;
+}
+
+.unit-row select {
+    justify-self: stretch;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.action-btn {
+    background: linear-gradient(90deg, #55ffe7 0%, #92baff 100%);
+    color: #17336d;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #46eaff66;
+    transition: all 0.2s;
+    outline: none;
+    min-width: 120px;
+}
+
+.action-btn:hover {
+    background: linear-gradient(90deg, #92baff 10%, #55ffe7 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 15px #46eaff88;
+}
+
+.result-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+}
+
+.convert-result {
+    font-size: 1.15em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #25e7f5;
+    text-align: center;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(37, 231, 245, 0.3);
+    min-height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* PC端优化 */
+@media (min-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+    
+    .header {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .card {
+        padding: 30px;
+        max-width: 600px; /* 增加PC端最大宽度 */
+    }
+    
+    .unit-row {
+        display: grid;
+        grid-template-areas:
+            "input input input input"
+            "from-unit arrow to-unit to-unit";
+        grid-template-columns: 1fr auto 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 22px;
+    }
+
+    .unit-row .unit-input {
+        grid-area: input;
+    }
+    .unit-row select:nth-of-type(1) {
+        grid-area: from-unit;
+    }
+    .unit-row span {
+        grid-area: arrow;
+        justify-self: center;
+    }
+    .unit-row select:nth-of-type(2) {
+        grid-area: to-unit;
+    }
+    
+    #category, .unit-row select, .unit-row input {
+        padding: 10px 12px; /* PC端稍大的padding */
+    }
+    
+    .convert-result {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+    .btn-row .action-btn {
+        min-width: 180px;    /* ensure button is wider */
+        padding: 12px 40px;  /* increase horizontal padding */
+        font-size: 1.1em;    /* slightly larger text */
+    }
+}
+
+/* 移动端适配 */
+@media (max-width: 767px) {
+    .container {
+        padding: 12px;
+    }
+    
+    .header {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .card {
+        padding: 18px;
+        width: calc(100% - 24px);
+    }
+    
+    .algos {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .algos label {
+        text-align: center;
+    }
+    
+    .unit-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+    
+    #category, .unit-row select, .unit-row input {
+        width: 100%;
+        padding: 10px 12px;
+    }
+    
+    .action-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.05em;
+    }
+    
+    .convert-result {
+        font-size: 1.05em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-title {
+        font-size: 1.8em;
+    }
+    
+    .slogan {
+        font-size: 0.9em;
+    }
+    
+    .card {
+        width: calc(100% - 20px);
+        padding: 15px;
+    }
+}

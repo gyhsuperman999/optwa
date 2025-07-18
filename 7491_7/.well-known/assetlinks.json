@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gyhtwa.weekcast",
+      "sha256_cert_fingerprints": [
+        "B0:FF:F3:2F:6A:D5:6D:5E:51:3B:F4:10:B5:86:82:D0:47:29:38:B1:37:48:AE:EA:83:AD:43:82:9F:0C:42:33"
+      ]
+    }
+  }
+]

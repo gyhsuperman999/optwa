@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "com.gyhtwa.tool10",
+      "package_name": "com.gyhtwa.tool10",
+      "sha256_cert_fingerprints": [
+        "52:AF:E0:6B:90:94:7F:82:2A:25:6A:E9:01:01:DE:2D:D1:4A:1D:69:39:27:A9:1B:1A:33:99:00:CC:A2:22:2B"
+      ]
+    }
+  }
+]

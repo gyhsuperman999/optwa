@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Business Loan & Calculator Tools</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Business Elite Calculators</h1>
+            <p>Mortgage, Car Loan, and General Tools</p>
+        </div>
+        <nav>
+            <button class="active" onclick="showTab('mortgage', this)">Mortgage</button>
+            <button onclick="showTab('carloan', this)">Car Loan</button>
+            <button onclick="showTab('general', this)">Calculator</button>
+        </nav>
+    </header>
+    <main>
+        <section id="mortgage" class="tab-section" style="display:block;">
+            <h2>Mortgage Calculator</h2>
+            <div class="form-row">
+                <input type="number" id="home-amount" placeholder="Loan Amount (USD)" />
+                <input type="number" id="home-rate" placeholder="Annual Interest Rate (%)" step="0.01" />
+                <input type="number" id="home-years" placeholder="Term (years)" />
+                <select id="home-mode">
+                    <option value="equal_payment">Equal Payment</option>
+                    <option value="equal_principal">Equal Principal</option>
+                </select>
+            </div>
+            <button onclick="calcMortgage()">Calculate</button>
+            <div id="home-result" class="result"></div>
+            <div>`Repayment Detail:`</div>
+            <div class="detail-title" id="home-detail-title"></div>
+            <div class="repayment-detail" id="home-detail"></div>
+        </section>
+        <section id="carloan" class="tab-section">
+            <h2>Car Loan Calculator</h2>
+            <div class="form-row">
+                <input type="number" id="car-amount" placeholder="Loan Amount (USD)" />
+                <input type="number" id="car-rate" placeholder="Annual Interest Rate (%)" step="0.01" />
+                <input type="number" id="car-years" placeholder="Term (years)" />
+                <select id="car-mode">
+                    <option value="equal_payment">Equal Payment</option>
+                    <option value="equal_principal">Equal Principal</option>
+                </select>
+            </div>
+            <button onclick="calcCarLoan()">Calculate</button>
+            <div id="car-result" class="result"></div>
+            <div>`Repayment Detail:`</div>
+            <div class="detail-title" id="car-detail-title"></div>
+            <div class="repayment-detail" id="car-detail"></div>
+        </section>
+        <section id="general" class="tab-section">
+            <h2>General Calculator</h2>
+            <div class="form-row">
+                <input type="text" id="general-exp" placeholder="Input e.g. 25*12+33/2" />
+            </div>
+            <div id="general-result" class="result"></div>
+            <div class="keyboard" id="calc-keyboard">
+                <button onclick="appendExp('7')">7</button>
+                <button onclick="appendExp('8')">8</button>
+                <button onclick="appendExp('9')">9</button>
+                <button onclick="appendExp('/')">&divide;</button>
+                <button onclick="appendExp('4')">4</button>
+                <button onclick="appendExp('5')">5</button>
+                <button onclick="appendExp('6')">6</button>
+                <button onclick="appendExp('*')">&times;</button>
+                <button onclick="appendExp('1')">1</button>
+                <button onclick="appendExp('2')">2</button>
+                <button onclick="appendExp('3')">3</button>
+                <button onclick="appendExp('-')">-</button>
+                <button onclick="appendExp('0')">0</button>
+                <button onclick="appendExp('.')">.</button>
+                <button onclick="clearExp()">C</button>
+                <button onclick="appendExp('+')">+</button>
+                <button class="equals" onclick="calcGeneral()">=</button>
+            </div>
+        </section>
+
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

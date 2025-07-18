@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pretty Converter Toolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>✨ Pretty Converter Toolkit</h1>
+    <nav>
+      <button class="active" onclick="showTool('timestamp', this)">Timestamp</button>
+      <button onclick="showTool('json', this)">JSON Validator</button>
+      <button onclick="showTool('base64', this)">Base64</button>
+    </nav>
+  </header>
+  <main>
+    <section id="timestamp" class="tool-section">
+      <h2>Timestamp Converter</h2>
+      <input type="number" id="ts-input" placeholder="Enter timestamp (ms)" />
+      <button onclick="tsToDate()">To Date</button>
+      <p>Date: <span id="ts-output"></span></p>
+      <input type="datetime-local" id="date-input" />
+      <button onclick="dateToTs()">To Timestamp</button>
+      <p>Timestamp: <span id="date-output"></span></p>
+    </section>
+
+    <section id="json" class="tool-section" style="display:none;">
+      <h2>JSON Validator</h2>
+      <textarea id="json-input" rows="5" placeholder="Enter JSON string..."></textarea>
+      <button onclick="validateJson()">Validate</button>
+      <p id="json-result"></p>
+    </section>
+
+    <section id="base64" class="tool-section" style="display:none;">
+      <h2>Base64 Encode/Decode</h2>
+      <textarea id="base64-input" rows="3" placeholder="Enter text..."></textarea>
+      <button onclick="encodeBase64()">Encode</button>
+      <button onclick="decodeBase64()">Decode</button>
+      <p>Result: <span id="base64-result"></span></p>
+      <button id="copy-base64-btn" onclick="copyBase64Result()">Copy</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

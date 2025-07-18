@@ -1,0 +1,218 @@
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden !important;  /* 禁止页面级滚动条，防止溢出 */
+}
+
+body {
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden !important;
+    position: fixed;  /* 彻底锁死页面滚动（尤其移动端）*/
+}
+
+main {
+    max-width: 420px;
+    width: 98vw;
+    margin: 0 auto;
+    background: #42046e;
+    border-radius: 18px;
+    box-shadow: 0 4px 28px 4px #297aff16;
+    padding: 26px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+}
+
+.ua-raw {
+    width: 96.5%;
+}
+
+.main-title {
+    font-size: 1.45em;
+    font-weight: 800;
+    color: #aefd04;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+nav button {
+    flex: 1 1 0;
+    background: #f1f7ff;
+    color: #2378dc;
+    border: none;
+    border-radius: 12px 12px 0 0;
+    padding: 12px 0 10px 0;
+    font-size: 1.07em;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    transition: background 0.16s, color 0.16s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #297aff0c inset;
+}
+
+nav button.active, nav button:hover {
+    background: linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%);
+    color: #fff;
+}
+
+.tab-section {
+    margin: 0;
+    padding-top: 0;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.23em;
+    letter-spacing: 0.01em;
+    color: #2068b2;
+}
+
+textarea {
+    width: 100%;
+    min-height: 54px;
+    max-height: 350px;
+    height: 350px;
+    border-radius: 10px;
+    border: 1.6px solid #e6eafd;
+    font-size: 1.09em;
+    margin-top: 12px;
+    background: #f5f9fd;
+    resize: vertical;
+    color: #223351;
+    /* box-shadow: 0 2px 6px #84b8f218; */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+textarea:focus {
+    outline: none;
+    border-color: #55a6ff;
+    box-shadow: 0 0 0 2px #48c6ef66;
+}
+
+button {
+    background: linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 20px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 6px 0;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 8px #6f86d615;
+}
+button:hover {
+    background: linear-gradient(90deg, #6f86d6 0%, #48c6ef 100%);
+    box-shadow: 0 4px 16px #48c6ef26;
+    color: #fff;
+}
+
+.gen-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+label {
+    color: #2760a3;
+    font-size: 1em;
+}
+
+select {
+    padding: 7px 10px;
+    border-radius: 7px;
+    border: 1.2px solid #b5d2fc;
+    background: #f2f7fe;
+    color: #2261a5;
+    font-size: 1em;
+    margin-right: 7px;
+    transition: border-color 0.18s;
+}
+select:focus {
+    outline: none;
+    border-color: #65aaff;
+}
+
+.ua-detail {
+    width: 90%;
+    margin-top: 12px;
+    background: linear-gradient(90deg, #fafdff 0%, #e7f3fd 100%);
+    border-radius: 12px;
+    padding: 15px 15px;
+    min-height: 48px;
+    height: 24vh;
+    flex: 1 1 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px #b5e0fd12 inset;
+    display: flex;
+    flex-direction: column;
+}
+
+#ua-gen-result {
+    width: 96.5%;
+}
+
+h4 {
+    margin: 0 0 7px 0;
+    color: #3086cc;
+    font-size: 1.09em;
+    font-weight: 600;
+}
+
+.footer-inner {
+    color: #8da0be;
+    font-size: 0.97em;
+    text-align: center;
+    margin: 10px 0 0 0;
+    letter-spacing: .5px;
+}
+
+@media (max-width: 600px) {
+    main { 
+        padding: 4vw 2vw 2vw 2vw;
+        border-radius: 0;
+        margin: 0 auto 6vw auto;
+        max-width: 100vw;
+    }
+    nav button { font-size: 0.98em; }
+    .ua-detail { font-size: 0.96em;}
+    h2 { font-size: 1.08em;}
+}
+
+#ua-parsed {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 4px;
+    font-size: 1em;
+    word-break: break-all;
+    line-height: 1.55;
+}
+
+/* 移动端高度稍小 */
+@media (max-width: 700px) {
+    #ua-parsed {
+        min-height: 42px;
+    }
+}
