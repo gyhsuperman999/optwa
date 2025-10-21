@@ -1,0 +1,175 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Text‑to‑Speech Pro</title>
+  <meta name="description" content="About Text‑to‑Speech Pro – a simple, fast tool to convert text to natural voices across languages and styles.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root{
+      --fg:#e6e8ee;--fg-dim:#a7b0c3;--bg:#181a1f;--card:#1f232b;--card-2:#1b1f27;--brand:#7aa2ff;--brand-2:#5ee1d6;--line:rgba(255,255,255,.08)
+    }
+    .about-page{max-width:1080px;margin:32px auto 24px;padding:0 20px}
+    .about-hero{background:linear-gradient(135deg,rgba(122,162,255,.12),rgba(94,225,214,.10));
+      border:1px solid var(--line);border-radius:16px;padding:28px 22px 22px;margin:8px 0 18px}
+    .about-hero h1{margin:0 0 6px;font-size:32px;letter-spacing:.2px}
+    .about-sub{color:var(--fg-dim);margin:6px 0 0;font-size:14px}
+
+    .about-layout{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:980px){.about-layout{grid-template-columns:260px 1fr}}
+
+    .about-toc{position:sticky;top:16px;align-self:start;border:1px solid var(--line);
+      background:var(--card);border-radius:12px;padding:14px 12px}
+    .about-toc h3{margin:0 0 8px;font-size:14px;color:var(--fg-dim);font-weight:600}
+    .about-toc a{display:block;padding:8px 8px;border-radius:8px;color:inherit;text-decoration:none}
+    .about-toc a:hover{background:rgba(255,255,255,.05)}
+
+    .about-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+    .about-card + .about-card{margin-top:14px}
+    .about-card h2{margin:0 0 10px;font-size:22px}
+    .about-card p{margin:10px 0}
+    .about-card ul{margin:6px 0 8px 22px}
+    .about-card li{margin:6px 0}
+
+    .notice{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card-2);margin:14px 0}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .site-footer{margin-top:22px}
+    .home-fab {
+      position: fixed;
+      right: 18px;
+      bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      color: #e6e8ee;
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+      z-index: 2147483647; /* ensure on top of any overlays */
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .home-fab:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 10px 18px rgba(0,0,0,0.45);
+      background: rgba(0,0,0,0.42);
+    }
+    .home-fab svg { width: 22px; height: 22px; display: block; }
+  </style>
+</head>
+<body>
+  <main class="about-page container">
+    <section class="about-hero">
+      <h1>About Text‑to‑Speech Pro</h1>
+      <p class="about-sub">We build a fast, accurate, and affordable way to convert text into natural voices across countries and styles.</p>
+    </section>
+
+    <section class="about-layout">
+      <nav class="about-toc" aria-label="On this page">
+        <h3>On this page</h3>
+        <a href="#mission">1. Our Mission</a>
+        <a href="#what">2. What We Do</a>
+        <a href="#how">3. How It Works</a>
+        <a href="#tech">4. Technology & Voices</a>
+        <a href="#use">5. Use Cases</a>
+        <a href="#trust">6. Trust & Privacy</a>
+        <a href="#roadmap">7. Roadmap</a>
+        <a href="#contact">8. Contact</a>
+      </nav>
+
+      <div>
+        <article id="mission" class="about-card">
+          <h2>1. Our Mission</h2>
+          <p>Make high‑quality voice generation accessible to everyone — creators, educators, developers, and businesses — regardless of language or accent. We focus on clarity, speed, and reliability so you can turn ideas into audio in seconds.</p>
+        </article>
+
+        <article id="what" class="about-card">
+          <h2>2. What We Do</h2>
+          <ul>
+            <li>Convert text into natural‑sounding speech in multiple languages and regional accents.</li>
+            <li>Offer voice styles (e.g., news, conversational, narration) and adjustable speed/intonation.</li>
+            <li>Provide simple exports (MP3/WAV) and batch processing for heavy workloads.</li>
+          </ul>
+        </article>
+
+        <article id="how" class="about-card">
+          <h2>3. How It Works</h2>
+          <p>Type or paste your text, pick a language and a voice style, then generate. Under the hood we route your request to the most suitable speech model and region for low latency and stable quality. The result can be previewed online and downloaded for use in videos, podcasts, e‑learning, games, and more.</p>
+        </article>
+
+        <article id="tech" class="about-card">
+          <h2>4. Technology & Voices</h2>
+          <ul>
+            <li>Modern TTS models with prosody control (rate, pitch, pauses) and multilingual phoneme handling.</li>
+            <li>Smart routing across providers/regions to keep latency low and uptime high.</li>
+            <li>Studio‑grade output with sensible defaults; power users can fine‑tune parameters.</li>
+          </ul>
+          <p class="notice">Note: We continuously evaluate vendors and models for quality, cost, and compliance. Exact providers may change over time.</p>
+        </article>
+
+        <article id="use" class="about-card">
+          <h2>5. Use Cases</h2>
+          <ul>
+            <li>Content creation: shorts, explainers, training videos.</li>
+            <li>Education & accessibility: language learning, screen reading, alternate formats.</li>
+            <li>Apps & automation: IVR prompts, notifications, dynamic audio.</li>
+          </ul>
+        </article>
+
+        <article id="trust" class="about-card">
+          <h2>6. Trust & Privacy</h2>
+          <p>We respect user privacy and design with security in mind. See our <a href="privacy.html">Privacy Policy</a> for details on data handling, retention, and your rights. We do not sell personal information.</p>
+        </article>
+
+        <article id="roadmap" class="about-card">
+          <h2>7. Roadmap</h2>
+          <ul>
+            <li>More languages and regional voices.</li>
+            <li>SSML support and advanced prosody control.</li>
+            <li>Project workspace: save, organize, and collaborate on audio.</li>
+            <li>Developer API for programmatic TTS at scale.</li>
+          </ul>
+        </article>
+
+        <article id="contact" class="about-card">
+          <h2>8. Contact</h2>
+          <p>Email us at <a href="mailto:jamie63820@gmail.com">jamie63820@gmail.com</a> (replace with your actual address). We love feedback and suggestions.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-brand">© 2025 Text‑to‑Speech Pro</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="sep">·</span>
+        <a href="about.html" class="footer-link">About Us</a>
+        <span class="sep">·</span>
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+      </nav>
+    </div>
+  </footer>
+
+  <a class="home-fab" href="index.html" aria-label="Home" title="Home" style="position:fixed;right:18px;bottom:22px;z-index:2147483647;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(6px);">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 10.5 12 3l9 7.5"/>
+      <path d="M5 10.5V20h14v-9.5"/>
+      <path d="M9.5 20v-5h5V20"/>
+    </svg>
+  </a>
+</body>
+</html>

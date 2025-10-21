@@ -1,6 +1,6 @@
-body, html {width:100vw;height:100vh;margin:0;padding:0;overflow:hidden;font-family:Segoe UI,sans-serif;background:#181a1f;color:#e0e0e0;}
+body, html {margin:0;padding:0;font-family:Segoe UI,sans-serif;background:#181a1f;color:#e0e0e0;min-height:100%;height:auto;}
 .bg {position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 50% 0%,#2b2f3a 0%,#181a1f 80%);pointer-events:none;}
-.container {position:relative;z-index:1;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 0;box-sizing:border-box;}
+.container {position:relative;z-index:1;width:100%;height:auto;flex:1 0 auto;display:flex;flex-direction:column;align-items:center;padding:16px 0;box-sizing:border-box;}
 .header {text-align:center;margin-bottom:12px;}
 .logo-title {
     font-size:2em;
@@ -40,11 +40,11 @@ footer {margin-top:auto;padding:12px 0;text-align:center;color:#60666e;font-size
 /* Global reset and body styling */
 body,
 html {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto; /* allow scroll if content taller than viewport */
     font-family: 'Segoe UI', sans-serif;
     background: #181a1f;
     color: #e0e0e0;
@@ -68,8 +68,9 @@ html {
 .container {
     position: relative;
     z-index: 1;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,8 +114,8 @@ html {
 /* Text area */
 .main-textarea {
     width: 100%;
-    height: 220px;
-    min-height: 220px;
+    height: 150px;
+    /* min-height: 150px; */
     background: #23252a;
     color: #e0e0e0;
     border: 1px solid #3a3d45;
@@ -186,17 +187,67 @@ footer {
 }
 
 /* Responsive mobile adjustments */
-@media (max-width: 600px) {
+@media (max-height: 786px) {
     .card {
         width: 95vw;
         padding: 16px;
     }
     .main-textarea {
-        height: 100px;
+        height: 60px;
     }
+
     .btn-row {
         flex-direction: column;
         gap: 8px;
         justify-content: center;
     }
+}
+
+
+.bg { z-index: 0; }
+.site-footer { position: relative; z-index: 2; }
+/* footer 的基础样式（如果还没加） */
+.site-footer { 
+  padding: 5px 10px; 
+  color: #8f9bb3; 
+  font-size: 14px; 
+  text-align: center; 
+  border-top: 1px solid rgba(255,255,255,0.08); 
+  background: rgba(0,0,0,0.25); 
+  backdrop-filter: blur(6px);
+}
+.footer-inner { display:flex; gap:5px; align-items:center; justify-content:center; flex-wrap:wrap; }
+.footer-nav { display: inline-flex; gap: 8px; align-items: center; margin-top: -10px; }
+.footer-link { color: inherit; text-decoration: none; }
+.footer-link:hover { text-decoration: underline; }
+.sep { opacity: .6; }
+
+/* Page layout to keep footer visible */
+body { display: flex; flex-direction: column; }
+.site-footer { flex: 0 0 auto; position: relative; z-index: 2; }
+.site-footer { border-top: 1px solid rgba(255,255,255,0.15); }
+
+
+/* === Footer: stack brand (1st line) + links (2nd line) on desktop === */
+@media (min-width: 992px) {
+  .site-footer .footer-inner {
+    display: flex;
+    flex-direction: column;     /* 关键：改成纵向排列 */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .site-footer .footer-brand { 
+    margin: 0; 
+  }
+  .site-footer .footer-nav {
+    display: flex;
+    flex-wrap: wrap;            /* 链接过长可自动换行 */
+    gap: 8px;
+    margin-top: 0 !important;   /* 覆盖之前为了上移加的负 margin */
+  }
+  .site-footer .footer-nav a { 
+    white-space: nowrap;        /* 链接名不被拆词 */
+  }
 }
