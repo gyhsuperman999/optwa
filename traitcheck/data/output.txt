@@ -1,0 +1,1025 @@
+[
+    {
+        "question": "When you are going out for a whole day, you will",
+        "choice_a": {
+            "value": "J",
+            "text": "Plan what to do and when to do it"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Just go with the flow"
+        }
+    },
+    {
+        "question": "You consider yourself as a",
+        "choice_a": {
+            "value": "P",
+            "text": "More spontaneous person"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "More organized person"
+        }
+    },
+    {
+        "question": "If you were a teacher, you would choose to teach",
+        "choice_a": {
+            "value": "S",
+            "text": "Fact-based courses"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Courses involving theories"
+        }
+    },
+    {
+        "question": "You usually",
+        "choice_a": {
+            "value": "E",
+            "text": "Easily get along with people"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Are more reserved or quiet"
+        }
+    },
+    {
+        "question": "Generally speaking, you get along better with",
+        "choice_a": {
+            "value": "N",
+            "text": "Imaginative people"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Realistic people"
+        }
+    },
+    {
+        "question": "Do you often let",
+        "choice_a": {
+            "value": "F",
+            "text": "Your emotions control your logic"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Your logic control your emotions"
+        }
+    },
+    {
+        "question": "In handling many things, you prefer",
+        "choice_a": {
+            "value": "P",
+            "text": "To act spontaneously"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "To act according to plan"
+        }
+    },
+    {
+        "question": "Are you",
+        "choice_a": {
+            "value": "E",
+            "text": "Easy to understand"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Difficult to understand"
+        }
+    },
+    {
+        "question": "Doing things according to a schedule",
+        "choice_a": {
+            "value": "J",
+            "text": "Suits you"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Makes you feel constrained"
+        }
+    },
+    {
+        "question": "When you have a special task, you prefer",
+        "choice_a": {
+            "value": "J",
+            "text": "To carefully organize and plan before starting"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "To figure out what to do as you go"
+        }
+    },
+    {
+        "question": "In most cases, you choose",
+        "choice_a": {
+            "value": "P",
+            "text": "To go with the flow"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "To do things according to a schedule"
+        }
+    },
+    {
+        "question": "Most people would say you are a",
+        "choice_a": {
+            "value": "I",
+            "text": "Person who values privacy"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Very open and frank person"
+        }
+    },
+    {
+        "question": "You would rather be considered as a",
+        "choice_a": {
+            "value": "S",
+            "text": "Pragmatic person"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Clever person"
+        }
+    },
+    {
+        "question": "In a large group of people, you are usually",
+        "choice_a": {
+            "value": "E",
+            "text": "The one introducing everyone"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "The one being introduced"
+        }
+    },
+    {
+        "question": "You would make friends with",
+        "choice_a": {
+            "value": "N",
+            "text": "Those who often come up with new ideas"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Those who are down-to-earth"
+        }
+    },
+    {
+        "question": "You tend to",
+        "choice_a": {
+            "value": "F",
+            "text": "Value feelings more than logic"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Value logic more than feelings"
+        }
+    },
+    {
+        "question": "You prefer",
+        "choice_a": {
+            "value": "P",
+            "text": "To plan after seeing how things develop"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "To plan early"
+        }
+    },
+    {
+        "question": "You like to spend a lot of time",
+        "choice_a": {
+            "value": "I",
+            "text": "Alone"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "With others"
+        }
+    },
+    {
+        "question": "Being with many people",
+        "choice_a": {
+            "value": "E",
+            "text": "Energizes you"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Often drains you"
+        }
+    },
+    {
+        "question": "You prefer",
+        "choice_a": {
+            "value": "J",
+            "text": "To arrange appointments and social gatherings well in advance"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "To be free and do whatever is fun at the time"
+        }
+    },
+    {
+        "question": "When planning a trip, you prefer",
+        "choice_a": {
+            "value": "P",
+            "text": "To go with the feeling of the day most of the time"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "To know in advance what you will do most days"
+        }
+    },
+    {
+        "question": "At social gatherings, you",
+        "choice_a": {
+            "value": "I",
+            "text": "Sometimes feel bored"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Often enjoy yourself"
+        }
+    },
+    {
+        "question": "You usually",
+        "choice_a": {
+            "value": "E",
+            "text": "Easily get along with others"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Tend to keep to yourself"
+        }
+    },
+    {
+        "question": "Who attracts you more?",
+        "choice_a": {
+            "value": "N",
+            "text": "A quick-thinking and very intelligent person"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "A pragmatic person with a wealth of common sense"
+        }
+    },
+    {
+        "question": "In your daily work, you",
+        "choice_a": {
+            "value": "P",
+            "text": "Quite enjoy handling emergencies that force you to race against time"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "Usually plan ahead to avoid working under pressure"
+        }
+    },
+    {
+        "question": "You think others generally",
+        "choice_a": {
+            "value": "I",
+            "text": "Take a long time to get to know you"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Get to know you in a short time"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "I",
+            "text": "Privacy"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Open and frank"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "J",
+            "text": "Pre-arranged"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Unplanned"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "N",
+            "text": "Abstract"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Concrete"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "F",
+            "text": "Gentle"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Firm"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "T",
+            "text": "Thinking"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Feeling"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "S",
+            "text": "Fact"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Idea"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "P",
+            "text": "Impulsive"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "Decisive"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "E",
+            "text": "Enthusiastic"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Quiet"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "I",
+            "text": "Quiet"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Extroverted"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "J",
+            "text": "Systematic"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Casual"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "N",
+            "text": "Theory"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Certainty"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "F",
+            "text": "Sensitive"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Fair"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "T",
+            "text": "Convincing"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Touching"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "S",
+            "text": "Statement"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Concept"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "P",
+            "text": "Unrestrained"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "Pre-arranged"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "I",
+            "text": "Reserved"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Talkative"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "J",
+            "text": "Orderly"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Unconstrained"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "N",
+            "text": "Idea"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Reality"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "F",
+            "text": "Compassionate"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Visionary"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "T",
+            "text": "Interest"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Blessing"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "S",
+            "text": "Pragmatic"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Theoretical"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "I",
+            "text": "Few friends"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Many friends"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "J",
+            "text": "Systematic"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Improvised"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "N",
+            "text": "Imaginative"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Matter-of-fact"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "F",
+            "text": "Kindly"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Objectively"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "T",
+            "text": "Objectively"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Passionately"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "S",
+            "text": "Build"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Invent"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "I",
+            "text": "Quiet"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Sociable"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "N",
+            "text": "Theory"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Fact"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "F",
+            "text": "Sympathetic"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Logical"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "T",
+            "text": "Analytical"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Sentimental"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer? Think carefully about the meaning of these words, and don't pay attention to their form or pronunciation.",
+        "choice_a": {
+            "value": "S",
+            "text": "Reasonable"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Fascinating"
+        }
+    },
+    {
+        "question": "When you have to complete a big project within a week, you will",
+        "choice_a": {
+            "value": "J",
+            "text": "List the different tasks to be done in order"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Start working immediately"
+        }
+    },
+    {
+        "question": "In social situations, you often feel",
+        "choice_a": {
+            "value": "I",
+            "text": "It's hard to start and maintain a conversation with some people"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "You can talk comfortably with most people"
+        }
+    },
+    {
+        "question": "When doing things that many people do, you prefer",
+        "choice_a": {
+            "value": "S",
+            "text": "To follow generally accepted methods"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "To come up with your own ideas"
+        }
+    },
+    {
+        "question": "Can your newly met friends tell your interests?",
+        "choice_a": {
+            "value": "E",
+            "text": "Immediately"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Only after they really get to know you"
+        }
+    },
+    {
+        "question": "You usually prefer subjects that",
+        "choice_a": {
+            "value": "N",
+            "text": "Teach concepts and principles"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Teach facts and data"
+        }
+    },
+    {
+        "question": "Which is a higher compliment, or praise as?",
+        "choice_a": {
+            "value": "F",
+            "text": "A consistently emotional person"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "A consistently rational person"
+        }
+    },
+    {
+        "question": "You think doing things according to a schedule",
+        "choice_a": {
+            "value": "P",
+            "text": "Is sometimes necessary, but generally you don't like it"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "Is mostly helpful and something you like to do"
+        }
+    },
+    {
+        "question": "When with a group of people, you usually choose",
+        "choice_a": {
+            "value": "I",
+            "text": "To talk to a few people you know well"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "To join the group conversation"
+        }
+    },
+    {
+        "question": "At social gatherings, you",
+        "choice_a": {
+            "value": "E",
+            "text": "Are one of the talkative ones"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Let others do most of the talking"
+        }
+    },
+    {
+        "question": "Making a list of things to do over the weekend",
+        "choice_a": {
+            "value": "J",
+            "text": "Suits you"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "Doesn't excite you"
+        }
+    },
+    {
+        "question": "Which is a higher compliment, or praise as",
+        "choice_a": {
+            "value": "T",
+            "text": "Capable"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Compassionate"
+        }
+    },
+    {
+        "question": "You usually like",
+        "choice_a": {
+            "value": "J",
+            "text": "To arrange your social appointments in advance"
+        },
+        "choice_b": {
+            "value": "P",
+            "text": "To do things as you feel like"
+        }
+    },
+    {
+        "question": "In general, when doing a large assignment, you choose",
+        "choice_a": {
+            "value": "P",
+            "text": "To think about what to do as you go"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "To break the work into steps first"
+        }
+    },
+    {
+        "question": "Can you chat endlessly with people",
+        "choice_a": {
+            "value": "I",
+            "text": "Only with those who share your interests"
+        },
+        "choice_b": {
+            "value": "E",
+            "text": "Almost with anyone"
+        }
+    },
+    {
+        "question": "You will",
+        "choice_a": {
+            "value": "S",
+            "text": "Follow some proven effective methods"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Almost with anyone"
+        }
+    },
+    {
+        "question": "When reading for pleasure, you",
+        "choice_a": {
+            "value": "N",
+            "text": "Like unusual or innovative expressions"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Like the author to speak directly"
+        }
+    },
+    {
+        "question": "Which type of boss (or teacher) would you prefer to work for?",
+        "choice_a": {
+            "value": "T",
+            "text": "Naturally kind but often inconsistent"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Sharp-tongued but always logical"
+        }
+    },
+    {
+        "question": "You mostly do things",
+        "choice_a": {
+            "value": "P",
+            "text": "According to your mood of the day"
+        },
+        "choice_b": {
+            "value": "J",
+            "text": "According to a planned schedule"
+        }
+    },
+    {
+        "question": "Are you",
+        "choice_a": {
+            "value": "E",
+            "text": "Able to talk comfortably with anyone as needed"
+        },
+        "choice_b": {
+            "value": "I",
+            "text": "Only able to speak freely with certain people or in certain situations"
+        }
+    },
+    {
+        "question": "When making decisions, you think it's more important to",
+        "choice_a": {
+            "value": "T",
+            "text": "Weigh the facts"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Consider others' feelings and opinions"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "N",
+            "text": "Imaginative"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Realistic"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "F",
+            "text": "Kind and generous"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Determined"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "T",
+            "text": "Fair"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Caring"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "S",
+            "text": "Make"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Design"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "N",
+            "text": "Possibility"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Inevitability"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "F",
+            "text": "Gentle"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Strength"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "T",
+            "text": "Practical"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Sentimental"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "S",
+            "text": "Manufacture"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Create"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "N",
+            "text": "Novel"
+        },
+        "choice_b": {
+            "value": "S",
+            "text": "Known"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "F",
+            "text": "Sympathy"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Analysis"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "T",
+            "text": "Assertive"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Gentle and loving"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "S",
+            "text": "Concrete"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Abstract"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "F",
+            "text": "Wholeheartedly"
+        },
+        "choice_b": {
+            "value": "T",
+            "text": "Determinedly"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "T",
+            "text": "Capable"
+        },
+        "choice_b": {
+            "value": "F",
+            "text": "Kind"
+        }
+    },
+    {
+        "question": "In each of the following pairs of words, which one do you prefer?",
+        "choice_a": {
+            "value": "S",
+            "text": "Practical"
+        },
+        "choice_b": {
+            "value": "N",
+            "text": "Innovative"
+        }
+    }
+]

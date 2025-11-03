@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="A website for MBTI test" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="MBTI, mbti" />
+    <title>MBTI Test</title>
+    <link rel="shortcut icon" href="./static/img/favicon.ico" />
+
+    <link rel="stylesheet" href="./static/css/navbar.css" />
+    <link rel="stylesheet" href="./static/css/app.css" />
+    <link rel="stylesheet" href="./static/css/svgcheckbx.css" />
+    <script src="./static/js/jquery-3.7.1.min.js"></script>
+
+    <script src="./static/js/navbar.js"></script>
+    <script src="./static/js/jquery.cookie.js"></script>
+    <script src="./static/js/MBTI.js"></script>
+    <script src="./static/js/printProjectInfo.js"></script>
+    <style>
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #2c3e50;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .questionbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        padding: 30px;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+
+      .msg {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 30px;
+        margin: 50px 0;
+        padding: 20px;
+      }
+
+      .msg .msg-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 25px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 300px;
+      }
+
+      .msg .msg-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+      }
+
+      .msg .msg-item span {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #34495e;
+        margin-top: 20px;
+        font-weight: 500;
+      }
+
+      .msg .msg-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .msg .msg-item:hover img {
+        transform: scale(1.1);
+      }
+
+      footer {
+        background: rgba(255, 255, 255, 0.95);
+        margin-top: 50px;
+        box-shadow: 0 -4px 32px rgba(31, 38, 135, 0.1);
+      }
+
+      @media screen and (max-width: 768px) {
+        .msg {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .msg .msg-item {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .questionbox {
+          margin: 20px 10px;
+          padding: 20px;
+        }
+
+        /* 移动端答题部分字体调整 */
+        #mbtiquestion {
+          h2 {
+            font-size: 24px;
+          }
+          label{
+            font-size: 14px;
+          }
+        }
+
+        #mbtiquestion .question-title {
+          font-size: 16px;
+          line-height: 1.4;
+        }
+
+        #mbtiquestion .options label {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+
+      /* 添加进入动画 */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .msg .msg-item {
+        animation: fadeInUp 0.6s ease backwards;
+      }
+
+      .msg .msg-item:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      .msg .msg-item:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      .msg .msg-item:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+    </style>
+  <title>traitcheck.club</title>
+</head>
+
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-brand">
+          <img src="./static/img/logo.png" alt="logo" />
+        </a>
+        <button class="navbar-toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+        <div class="navbar-menu">
+          <a href="personalities.html">16 Personalities Introduction</a>
+          <a href="ZodiacSigns.html">Zodiac Signs</a>
+          <a href="IQ.html">IQ Test</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <div class="msg">
+        <div class="msg-item">
+          <img src="./static/img/a.png" alt="Be Yourself Icon" />
+          <span
+            >Be Yourself: Answer Honestly to Discover Your Personality
+            Type</span
+          >
+        </div>
+        <div class="msg-item">
+          <img src="./static/img/b.png" alt="Understanding Icon" />
+          <span
+            >Understanding How Your Personality Type Affects Different Areas of
+            Your Life</span
+          >
+        </div>
+        <div class="msg-item">
+          <img src="./static/img/c.png" alt="Shape Yourself Icon" />
+          <span>Shape the Self You Want to Be with Our Curated Materials</span>
+        </div>
+      </div>
+
+      <div class="questionbox">
+        <div class="flexWidth" id="mbtiquestion">
+          <!-- topic -->
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <p>&copy; 2024 Horoscope & MBTI. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+  <!-- gtag -->
+
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ04DM97HK"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EQ04DM97HK');
+      </script>
+        
+</html>

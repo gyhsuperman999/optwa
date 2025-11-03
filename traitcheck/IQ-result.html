@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A website for MBTI test">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="MBTI, mbti">
+    <title>IQ Test Result</title>
+    <link rel="shortcut icon" href="./static/img/favicon.ico">
+
+    <link rel="stylesheet" href="./static/css/navbar.css">
+    <link rel="stylesheet" href="./static/css/app.css">
+    <script src="./static/js/jquery-3.7.1.min.js"></script>
+
+    <script src="./static/js/navbar.js"></script>
+    <script src="./static/js/classie.js"></script>
+    <script src="./static/js/introduce.js"></script>
+    <style>
+        body {
+        }
+       
+
+        .page-container {
+        position: relative;
+      }
+
+      .page-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("./static/img/field.jpg");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        filter: blur(3px);
+        z-index: -1; /* 置于容器底部 */
+      }
+
+        
+
+        .result-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .result-header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .score-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score {
+            font-size: 4em;
+            color: #4398b5;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .interpretation {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .interpretation h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .interpretation p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .history-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .history-title {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .history-chart {
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        .history-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .history-item .date {
+            color: #666;
+        }
+
+        .history-item .score {
+            font-size: 1.2em;
+            color: #4398b5;
+        }
+
+        .history-chart-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .history-chart-legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .history-chart-legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .history-section {
+                margin: 20px 10px;
+                padding: 15px;
+            }
+
+            .history-chart {
+                height: 150px;
+            }
+
+            .history-item {
+                padding: 10px;
+            }
+
+            .history-item .date {
+                font-size: 12px;
+            }
+
+            .history-item .score {
+                font-size: 14px;
+            }
+        }
+    </style>
+<title>traitcheck.club</title>
+</head>
+<body>
+    <div class="page-container">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="./static/img/logo.png" alt="logo" />
+                </a>
+                <button class="navbar-toggle">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="4" x2="20" y1="12" y2="12" />
+                        <line x1="4" x2="20" y1="6" y2="6" />
+                        <line x1="4" x2="20" y1="18" y2="18" />
+                    </svg>
+                </button>
+                <div class="navbar-menu">
+                    <a href="personalities.html">16 Personalities Introduction</a>
+                    <a href="MBTI.html">MBTI Test</a>
+                    <a href="ZodiacSigns.html">Zodiac Signs</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="result-container">
+            <h1>Your IQ Test Result</h1>
+
+            <div class="score-display"><span id="iq-score">--</span> IQ</div>
+
+            <div class="result-description" id="result-description">
+                <!-- Result description will be loaded dynamically via JavaScript -->
+            </div>
+
+            <div class="share-buttons">
+                <button class="btn btn-primary" onclick="shareResult()">
+                    Share Result
+                </button>
+            </div>
+
+            <a href="IQ.html" class="retry-btn">Take Test Again</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        window.onload = function () {
+            const iqScore = localStorage.getItem("iqScore") || 100;
+            document.getElementById("iq-score").textContent = iqScore;
+
+            // Get interpretation text based on IQ score
+            let interpretation = "";
+            if (iqScore >= 140) {
+                interpretation = "Genius Level (Top 1%): You have demonstrated exceptional intellectual capabilities. Your score places you among the highest percentile of test-takers.";
+            } else if (iqScore >= 130) {
+                interpretation = "Very Superior (Top 2%): Your intellectual abilities are significantly above average. You show strong potential in complex problem-solving and analytical thinking.";
+            } else if (iqScore >= 120) {
+                interpretation = "Superior (Top 10%): You have shown above-average intellectual capabilities. Your problem-solving skills and logical thinking are well developed.";
+            } else if (iqScore >= 110) {
+                interpretation = "High Average: Your intellectual abilities are above the average range. You demonstrate good analytical and problem-solving skills.";
+            } else if (iqScore >= 90) {
+                interpretation = "Average Range: Your score falls within the normal range. You show balanced capabilities in various types of problem-solving.";
+            } else if (iqScore >= 80) {
+                interpretation = "Low Average: Your score indicates room for improvement. Consider practicing more problem-solving exercises to enhance your skills.";
+            } else {
+                interpretation = "Below Average: Your score suggests that you might benefit from additional practice with logical and analytical problems.";
+            }
+
+            document.getElementById("result-description").innerHTML = `
+                <h2>Score Interpretation</h2>
+                <p>${interpretation}</p>
+                <h2>What This Means</h2>
+                <p>IQ tests measure various cognitive abilities including pattern recognition, logical reasoning, and problem-solving skills. Your score is just one measure of cognitive ability and does not define your overall potential or capabilities.</p>
+                <p>Remember that IQ is just one aspect of intelligence. Success in life depends on many factors including emotional intelligence, creativity, determination, and social skills.</p>
+            `;
+
+            // Display test history
+            const history = JSON.parse(localStorage.getItem('iqTestHistory') || '[]');
+            if (history.length > 0) {
+                const historySection = document.createElement('div');
+                historySection.className = 'history-section';
+                historySection.innerHTML = `
+                    <div class="history-header">
+                        <h2>Test History</h2>
+                    </div>
+                    <div class="history-chart">
+                        <canvas id="historyChart"></canvas>
+                    </div>
+                    <div class="history-list">
+                        ${history.map(entry => `
+                            <div class="history-item">
+                                <span class="date">${new Date(entry.date).toLocaleDateString()}</span>
+                                <span class="score">${entry.score} IQ</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                document.querySelector('.result-container').appendChild(historySection);
+
+                // Create chart
+                const ctx = document.getElementById('historyChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: history.map(entry => new Date(entry.date).toLocaleDateString()),
+                        datasets: [{
+                            label: 'IQ Score',
+                            data: history.map(entry => entry.score),
+                            borderColor: '#4398b5',
+                            backgroundColor: 'rgba(67, 152, 181, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                min: 70,
+                                max: 150,
+                                ticks: {
+                                    stepSize: 10
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        };
+
+        function shareResult() {
+            const score = document.getElementById("iq-score").textContent;
+            const text = `I just completed an IQ test and scored ${score} IQ! Try it yourself at [Your Website URL]`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My IQ Test Result',
+                    text: text,
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const dummy = document.createElement('textarea');
+                document.body.appendChild(dummy);
+                dummy.value = text;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                alert('Result copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+<!-- gtag -->
+
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ04DM97HK"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EQ04DM97HK');
+      </script>
+        
+</html>
