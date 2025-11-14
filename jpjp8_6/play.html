@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>jpjp8.com</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="css/play.css" />
+</head>
+
+<body>
+    <div class="playPage" id="playPage">
+        <!-- 顶部导航 -->
+        <header class="header">
+            <div class="logo">
+                <a href="/"><img src="logo.png" alt="Games List"></a>
+            </div>
+            <div class="search-box" onclick="window.location.href='search.html'">
+                <input type="text" placeholder="Search" readonly>
+                <button type="button" class="search-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="menu-toggle" onclick="window.location.href='search.html'">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- 游戏分类导航 -->
+        <nav class="game-categories">
+            <!-- 分类将通过JavaScript动态添加 -->
+        </nav>
+
+        <!-- 主要内容区域 -->
+        <main class="play-content">
+            <div class="content-layout">
+                <!-- 左侧主要内容 -->
+                <div class="main-column">
+                    <!-- 游戏播放区域 -->
+                    <div class="game-player">
+                        <div class="player-wrapper">
+                            <div class="play-button">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 游戏信息区域 -->
+                    <div class="game-info">
+                        <h1 class="game-title">XXXXX</h1>
+                        <p class="game-description">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+                        
+                        <!-- 游戏统计和互动 -->
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <button class="stat-btn like">
+                                    <span class="count">1k+</span>
+                                </button>
+                            </div>
+                            <div class="stat-item">
+                                <button class="stat-btn dislike">
+                                    <span class="count">500</span>
+                                </button>
+                            </div>
+                            <div class="stat-item">
+                                <button class="stat-btn favorite">
+                                    <span class="count">50k+</span>
+                                </button>
+                            </div>
+                            <div class="stat-item">
+                                <button class="stat-btn share">
+                                    <span class="count">1234</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧边栏 -->
+                <aside class="sidebar">
+                    <div class="latest-games">
+                        <h3>Latest Games</h3>
+                        <div class="games-list">
+                            <!-- 最新游戏列表将通过JavaScript动态添加 -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- 相关游戏推荐 -->
+            <section class="more-games">
+                <h2>More Games You Might Like</h2>
+                <div class="games-grid">
+                    <!-- 游戏卡片将通过JavaScript动态添加 -->
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚信息 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="./PrivacyPolicy.html">Privacy Policy</a>
+                    <a href="./TermsofService.html">Terms of Service</a>
+                </div>
+                <p class="copyright">© 2024 Games List. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <div id="mg_inter"
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;
+                    display:none;justify-content:center;align-items:center;
+                    background:rgba(0,0,0,.55);z-index:2147483647;padding:16px;box-sizing:border-box;">
+
+            <!-- 关闭按钮：用 fixed + 极高 z-index，避免被 iframe 盖住 -->
+            <button onclick="mgHide()" aria-label="Close"
+                    style="position:fixed;top:12px;right:12px;width:36px;height:36px;border:0;
+                            border-radius:50%;background:rgba(0,0,0,.7);color:#fff;font-size:20px;
+                            cursor:pointer;z-index:2147483647">×</button>
+
+            <!-- 插屏内容容器（白底卡片，可控制最大宽高） -->
+            <div style="width:100%;max-width:420px;max-height:85vh;background:#fff;border-radius:12px;
+                        overflow:auto;box-shadow:0 10px 30px rgba(0,0,0,.4);padding:8px;box-sizing:border-box;">
+            </div>
+        </div>
+
+        <script>
+            function mgShow(){
+                var el = document.getElementById('mg_inter');
+                if(el){ el.style.display='flex'; document.documentElement.style.overflow='hidden'; }
+            }
+            function mgHide(){
+                var el = document.getElementById('mg_inter');
+                if(el){ el.style.display='none'; document.documentElement.style.overflow=''; }
+            }
+            (function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq"); 
+        </script> 
+
+    </div>
+
+    <script type="module">
+        import { getGamesListApi, getGamesListCategory } from "./assets/js/business.js";
+
+        // 初始化页面
+        async function initPlayPage() {
+            try {
+                // 获取URL参数
+                const urlParams = new URLSearchParams(window.location.search);
+                const gameId = urlParams.get('id');
+                
+                if (!gameId) {
+                    window.location.href = '/'; // 如果没有id参数，返回首页
+                    return;
+                }
+
+                // 加载游戏数据
+                const gameData = await getGamesListApi({gameId : gameId });
+                
+                if (!gameData || gameData.length === 0) {
+                    console.error('Game not found');
+                    return;
+                }
+
+                const game = gameData[0]; // 获取第一个匹配的游戏
+
+                // 更新页面标题
+                document.title = `${game.title} - Play Game`;
+                
+                // 更新游戏标题和描述
+                document.querySelector('.game-title').textContent = game.title;
+                document.querySelector('.game-description').textContent = game.description || '';
+
+                // 更新游戏缩略图
+                const playerWrapper = document.querySelector('.player-wrapper');
+                playerWrapper.style.backgroundImage = `url('${game.thumb}')`;
+
+                // 添加播放按钮点击事件
+                const playButton = document.querySelector('.play-button');
+                playButton.addEventListener('click', () => {
+                    window.location.href = game.url; // 直接跳转到游戏URL
+                });
+
+                // 让整个游戏区域可点击
+                playerWrapper.style.cursor = 'pointer';
+                playerWrapper.addEventListener('click', () => {
+                    window.location.href = game.url;
+                });
+
+                // 加载相关游戏和最新游戏
+                loadMoreGames();
+                loadLatestGames();
+            } catch (error) {
+                console.error('Error loading game:', error);
+            }
+        }
+
+        // 初始化分类导航
+        const gameCategories = document.querySelector(".game-categories");
+        getGamesListCategory.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.className = "category-item";
+            div.setAttribute("data-category", index + 1);
+            div.innerHTML = `
+                <img src="./assets/category/${item}.png" alt="${item} Games">
+                <span>${item}</span>
+            `;
+            
+            // 添加点击事件
+            div.addEventListener('click', () => {
+                window.location.href = `/?category=${index + 1}`;
+            });
+            
+            gameCategories.appendChild(div);
+        });
+
+        // 加载更多游戏推荐
+        async function loadMoreGames() {
+            try {
+                const gamesGrid = document.querySelector(".games-grid");
+                // 加载8个推荐游戏
+                const games = await getGamesListApi({
+                    num: 8
+                });
+
+                if (games && games.length > 0) {
+                    const gamesHTML = games.map(game => `
+                        <div class="game-card" onclick="window.location.href='play.html?title=${encodeURIComponent(game.title)}&id=${game.id}'">
+                            <img src="${game.thumb}" alt="${game.title}">
+                            <div class="game-card-content">
+                                <h3>${game.title}</h3>
+                                <p>${game.description || ''}</p>
+                            </div>
+                        </div>
+                    `).join('');
+                    gamesGrid.innerHTML = gamesHTML;
+                }
+            } catch (error) {
+                console.error('Error loading more games:', error);
+            }
+        }
+
+        // 加载最新游戏
+        async function loadLatestGames() {
+            try {
+                const gamesList = document.querySelector(".latest-games .games-list");
+                // 加载6个最新游戏
+                const games = await getGamesListApi({
+                    num: 6
+                });
+
+                if (games && games.length > 0) {
+                    const gamesHTML = games.map(game => `
+                        <div class="game-list-item" onclick="window.location.href='play.html?title=${encodeURIComponent(game.title)}&id=${game.id}'">
+                            <img src="${game.thumb}" alt="${game.title}">
+                            <div class="game-list-info">
+                                <h4>${game.title}</h4>
+                                <p>${game.description || ''}</p>
+                            </div>
+                        </div>
+                    `).join('');
+                    gamesList.innerHTML = gamesHTML;
+                }
+            } catch (error) {
+                console.error('Error loading latest games:', error);
+            }
+        }
+
+        // 初始化页面
+        initPlayPage();
+    </script>
+</body>
+
+<!-- gtag -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBLTN69RDP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QBLTN69RDP');
+</script>
+
+        
+
+</html>

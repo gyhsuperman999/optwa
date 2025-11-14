@@ -1,643 +1,330 @@
 ﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="A website for MBTI test" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="keywords" content="MBTI, mbti" />
+<html lang="en" cyan>
 
-    <!-- Open Graph tags for social media -->
-    <meta
-      property="og:title"
-      content="Free MBTI Test & Zodiac Signs | Horoscope & MBTI"
-    />
-    <meta
-      property="og:description"
-      content="Discover your personality type with our free MBTI test and explore zodiac sign compatibility. No registration needed - get instant results!"
-    />
-    <meta property="og:image" content="./static/img/logo.png" />
-
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Free MBTI Test & Zodiac Signs | Horoscope & MBTI"
-    />
-    <meta
-      name="twitter:description"
-      content="Discover your personality type with our free MBTI test and explore zodiac sign compatibility. No registration needed - get instant results!"
-    />
-    <meta name="twitter:image" content="./static/img/logo.png" />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, user-scalable=no" />
     <title>traitcheck.club</title>
-    <link rel="shortcut icon" href="./static/img/favicon.ico" />
-    <link rel="stylesheet" href="./static/css/navbar.css" />
-    <link rel="stylesheet" href="./static/css/title.css" />
-    <link rel="stylesheet" href="./static/css/startbtn.css" />
-    <link rel="stylesheet" href="./static/css/app.css" />
-    <script src="./static/js/jquery-3.7.1.min.js"></script>
-    <script src="./static/js/navbar.js"></script>
-    <script src="./static/js/printProjectInfo.js"></script>
-    <script type="text/javascript" src="./static/js/jquery.cookie.js"></script>
-    <style>
-      .page-container {
-        position: relative;
-      }
-
-      .page-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("./static/img/field.jpg");
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        filter: blur(3px);
-        z-index: -1; /* 置于容器底部 */
-      }
-
-      .bs-docs-section {
-        padding: 50px;
-        line-height: 1.8;
-        letter-spacing: 0.5px;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .Start-btn {
-        display: inline-block;
-        padding: 10px 100px;
-        background-color: #4398b5;
-        color: #fff;
-        border: none;
-        border-radius: calc(infinity * 1px);
-        font-size: 50px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        text-decoration: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        margin: 50px;
-
-        &:hover {
-          background-color: #337ab7;
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-
-      .search-container {
-        position: relative;
-        margin-right: 20px;
-        width: 300px;
-      }
-
-      .search-input-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-      }
-
-      #searchInput {
-        padding: 8px 40px 8px 12px;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        width: 100%;
-        font-size: 14px;
-        background: white;
-        autocomplete: off;
-        autocorrect: off;
-        autocapitalize: off;
-        spellcheck: false;
-      }
-
-      .search-button {
-        position: absolute;
-        right: 8px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        padding: 4px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .search-button svg {
-        width: 20px;
-        height: 20px;
-        color: #666;
-      }
-
-      .search-button:hover svg {
-        color: #333;
-      }
-
-      .search-tags {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        min-width: 200px;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 1000;
-        display: none;
-        padding: 10px;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 4px;
-      }
-
-      .search-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 5px 12px;
-        margin: 0;
-        border-radius: 15px;
-        cursor: pointer;
-        font-size: 14px;
-        transition: all 0.2s;
-        white-space: nowrap;
-        color: white;
-        min-width: fit-content;
-        flex: 0 1 auto;
-      }
-
-      /* 基础测试标签 (星座、IQ、MBTI) */
-      .search-tag[data-url*="ZodiacSigns.html"],
-      .search-tag[data-url*="IQ.html"],
-      .search-tag[data-url*="MBTI.html"] {
-        background: #4398b5;
-      }
-
-      /* E开头的外向型人格 */
-      .search-tag[data-url*="/E"] {
-        background: #ff7f50;
-      }
-
-      /* I开头的内向型人格 */
-      .search-tag[data-url*="/I"] {
-        background: #6495ed;
-      }
-
-      /* 悬停效果 */
-      .search-tag:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-
-      .search-tag[data-url*="ZodiacSigns.html"]:hover,
-      .search-tag[data-url*="IQ.html"]:hover,
-      .search-tag[data-url*="MBTI.html"]:hover {
-        background: #3887a1;
-      }
-
-      .search-tag[data-url*="/E"]:hover {
-        background: #ff6b3d;
-      }
-
-      .search-tag[data-url*="/I"]:hover {
-        background: #4f7fd9;
-      }
-
-      /* 在 style 标签中添加提示框样式 */
-      .search-notification {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-top: 4px;
-        padding: 12px;
-        text-align: center;
-        color: #666;
-        font-size: 14px;
-        display: none;
-        animation: fadeIn 0.2s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* 星座标签的样式 */
-      .search-tag[data-url*="#"] {
-        background: #9b59b6; /* 紫色系，区别于其他类型的标签 */
-      }
-
-      .search-tag[data-url*="#"]:hover {
-        background: #8e44ad;
-      }
-    </style>
-  <title>traitcheck.club</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="prod-css/index.css">
+    <script src="./assets/js/swiper-element-bundle.min.js"></script>
 </head>
 
-  <body>
-    <div class="page-container">
-      <nav class="navbar">
-        <div class="navbar-container">
-          <a href="index.html" class="navbar-brand">
-            <img src="./static/img/logo.png" alt="logo" />
-          </a>
-          
-          <div class="search-container">
-            <div class="search-input-wrapper">
-              <input type="text" id="searchInput" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-              <button class="search-button">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-              </button>
-            </div>
-            <div class="search-tags">
-              <span class="search-tag" data-url="ZodiacSigns.html">Zodiac Signs</span>
-              <span class="search-tag" data-url="IQ.html">IQ Test</span>
-              <span class="search-tag" data-url="MBTI.html">MBTI Test</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#aries">Aries (Mar 21 - Apr 19)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#taurus">Taurus (Apr 20 - May 20)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#gemini">Gemini (May 21 - Jun 20)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#cancer">Cancer (Jun 21 - Jul 22)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#leo">Leo (Jul 23 - Aug 22)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#virgo">Virgo (Aug 23 - Sep 22)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#libra">Libra (Sep 23 - Oct 23)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#scorpio">Scorpio (Oct 24 - Nov 21)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#sagittarius">Sagittarius (Nov 22 - Dec 20)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#capricorn">Capricorn (Dec 21 - Jan 20)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#aquarius">Aquarius (Jan 21 - Feb 19)</span>
-              <span class="search-tag" data-url="ZodiacSigns.html#pisces">Pisces (Feb 20 - Mar 20)</span>
-              <span class="search-tag" data-url="personalities/ENFJ.html">ENFJ Teacher</span>
-              <span class="search-tag" data-url="personalities/ENFP.html">ENFP Champion</span>
-              <span class="search-tag" data-url="personalities/ENTJ.html">ENTJ Marshal</span>
-              <span class="search-tag" data-url="personalities/ENTP.html">ENTP Inventor</span>
-              <span class="search-tag" data-url="personalities/ESFJ.html">ESFJ Provider</span>
-              <span class="search-tag" data-url="personalities/ESFP.html">ESFP Performer</span>
-              <span class="search-tag" data-url="personalities/ESTJ.html">ESTJ Executive</span>
-              <span class="search-tag" data-url="personalities/ESTP.html">ESTP Challenger</span>
-              <span class="search-tag" data-url="personalities/INFJ.html">INFJ Counselor</span>
-              <span class="search-tag" data-url="personalities/INFP.html">INFP Healer</span>
-              <span class="search-tag" data-url="personalities/INTJ.html">INTJ Mastermind</span>
-              <span class="search-tag" data-url="personalities/INTP.html">INTP Architect</span>
-              <span class="search-tag" data-url="personalities/ISFJ.html">ISFJ Protector</span>
-              <span class="search-tag" data-url="personalities/ISFP.html">ISFP Artist</span>
-              <span class="search-tag" data-url="personalities/ISTJ.html">ISTJ Inspector</span>
-              <span class="search-tag" data-url="personalities/ISTP.html">ISTP Craftsman</span>
-            </div>
+<body>
+    <div class="indexPage loadingAnimation" id="indexPage">
 
-            <div class="search-notification">
-              No matching results found
-            </div>
-          </div>
-          <button class="navbar-toggle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </button>
-          <div class="navbar-menu">
-            <a href="personalities.html">16 Personalities Introduction</a>
-            <a href="ZodiacSigns.html">Zodiac Signs</a>
-            <a href="IQ.html">IQ Test</a>
-          </div>
-        </div>
-      </nav>
+        <header class="header">
+            <div class="top-bar">
+                <div class="logo">
+                    <img src="logo.png" alt="" srcset="">
+                </div>
+                <a href="search.html" class="search-bar">
+                    <div class="icon">
+                        <img src="./assets/Search@3x.png" alt="" srcset="">
+                    </div>
 
-                        <section class="article">
-            <h2>What Is an IQ Test?</h2>
+                </a>
+
+                <!-- <div class="menu-icons" onclick="switchMenu()">
+                    <img class="icon" src="./assets/fenlei.png" alt="" srcset="">
+                </div> -->
+            </div>
+            <div class="menuFloatContent hidden">
+            </div>
+        </header>
+
+
+
+        <main class="main-content">
+
+
+
+            <swiper-container init="false" class="gameSwiper" navigation="false" pagination="false"
+                pagination-clickable="true" space-between="10" slides-per-view="1" breakpoints='{
+                "1200": {
+                    "slidesPerView": 5
+                },
+                "700": {
+                    "slidesPerView": 3
+                },
+                "500": {
+                    "slidesPerView": 2
+                }
+            }'>
+            </swiper-container>
+
+
+            <section class="hot font2">
+                <h2>HOT</h2>
+                <div class="hotGameGridBox">
+
+
+                </div>
+            </section>
+
+            <section class="newGame font2">
+                <h2>NEW</h2>
+                <div class="newGameGridBox">
+
+                </div>
+            </section>
+
+            <section class="threeD font2">
+                <h2>
+                    <span class="categoryName">threeD</span>
+                    <!-- <a href="search.html?category=3D" class="more-link">more &gt;</a> -->
+
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <div class="categoryName"></div>
+                            
+                            <span class="dropdown-arrow"></span>
+                        </button>
+                        <div class="dropdown-content">
+
+
+                        </div>
+                    </div>
+                </h2>
+                <div class="threeDGameGridBox">
+
+                </div>
+            </section>
+
+            <!-- <section class="Adventure font2">
+                <h2>
+                    <span>Adventure</span>
+                    <a href="search.html?category=Adventure" class="more-link"></a>
+                </h2>
+                <div class="AdventureGameGridBox">
+                </div>
+            </section> -->
+
+
+
+
+        </main>
+
+        <div class="site-info-area font1">
+            <h2 style="text-align: left">
+                If you enjoy our site, learn more about GAME!
+            </h2>
+
+
             <p>
-              IQ tests are designed to measure a person’s reasoning ability and intellectual potential.
-              They are not perfect indicators of intelligence but can reflect problem-solving speed,
-              pattern recognition, and memory capacity.
+                Discover a world of exciting challenges online at GAME, the ultimate
+                destination for amazing games designed for girls, boys, and kids with
+                diverse interests! Our website offers a vast collection of free games,
+                accessible on mobile phones, tablets, computers, and laptops. With a
+                variety of fun categories, you can enjoy your favorite characters in
+                games like motorcycle, adventure, spa, action, makeover, and dress-up,
+                suitable for both boys and girls. Popular cartoon categories include
+                Princesses, Ben 10, Batman, Superheroes, Pokemon, Fantastic Four, Hulk,
+                Thor, Little Mermaid, Moana, and Frozen.
+                10,Batman,Superheroes,Pokemon,Fantastic Four,Hulk,Thor,Little
+                Mermaid,Moana or Frozen!
             </p>
+
+
             <p>
-              In this free online test, you’ll answer 20 questions that evaluate logical thinking,
-              spatial awareness, and number reasoning. 
-              The result gives you an estimated IQ score with explanation.
+                Experience cutting-edge technology with HTML5 games, ensuring seamless
+                play on mobile devices. Just connect to the internet, visit GAME via
+                Google, and start playing with friends. Explore our new 2 Player
+                category, along with 3 Player and even 4 Player games for children.
+                Challenge yourself with adventure, chess, puzzle, shooting, and racing
+                games, featuring fast cars, 3D vehicles, motorcycles, helicopters,
+                airplanes, and F1 cars. Dive into endless fun and adventure on GAME!
             </p>
-          </section>
-      <div class="">
-        <div class="">
-          <div class="content">
-            <svg viewBox="0 0 1000 300" style="width: 100%">
-              <symbol id="s-text">
-                <text text-anchor="middle" x="50%" y="60%" dy=".2em">
-                  MBTI-TEST
-                </text>
-              </symbol>
-              <use xlink:href="#s-text" class="text"></use>
-              <use xlink:href="#s-text" class="text"></use>
-              <use xlink:href="#s-text" class="text"></use>
-              <use xlink:href="#s-text" class="text"></use>
-              <use xlink:href="#s-text" class="text"></use>
-              <use xlink:href="#s-text" class="text"></use>
-              <clippath id="cp-text">
-                <text
-                  text-anchor="middle"
-                  x="50%"
-                  y="60%"
-                  dy=".2em"
-                  class="text--line"
-                >
-                  MBTI-TEST
-                </text>
-              </clippath>
-              <g clip-path="url(#cp-text)" class="shadow">
-                <rect
-                  width="100%"
-                  height="100%"
-                  class="anim-shape anim-shape--shadow"
-                ></rect>
-              </g>
-              <g clip-path="url(#cp-text)" class="colortext">
-                <rect width="100%" height="100%" class="anim-shape"></rect>
-                <rect width="80%" height="100%" class="anim-shape"></rect>
-                <rect width="60%" height="100%" class="anim-shape"></rect>
-                <rect width="40%" height="100%" class="anim-shape"></rect>
-                <rect width="20%" height="100%" class="anim-shape"></rect>
-              </g>
-              <use xlink:href="#s-text" class="text--transparent"></use>
-            </svg>
-          </div>
+
+
         </div>
-      </div>
-
-      <div
-        class="container"
-        style="display: flex; flex-direction: column; align-items: center"
-      >
-        <a href="./MBTI.html" class="Start-btn">
-          <span>Start</span>
-        </a>
-
-        <div class="bs-docs-section">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="bs-component">
-                <h2>Before Taking the MBTI Test</h2>
-                <p>
-                  1. Please answer all questions honestly and independently.
-                  This is essential for obtaining valid results.
-                </p>
-                <p>
-                  2. The personality analysis shows your personality tendencies,
-                  not your knowledge, skills, or experience.
-                </p>
-                <p>
-                  3. The MBTI personality type descriptions are provided only
-                  for test takers to identify their personality type. There is
-                  no good or bad personality type, only differences. Each
-                  personality type has its own value and advantages, as well as
-                  disadvantages and areas that need attention. Understanding
-                  your personality's strengths and weaknesses clearly helps you
-                  better utilize your strengths while avoiding potential
-                  pitfalls in dealing with people and making important
-                  decisions.
-                </p>
-                <p>
-                  4. There are 93 questions in total. There are no right or
-                  wrong answers. Please choose based on your actual situation.
-                </p>
-                <p>Test results are for reference only.</p>
-              </div>
+        <div class="shengming font1">
+            <h3 style="text-align: left">About Us</h3>
+            <div>
+                User Responsibility: Users shall bear full responsibility for the
+                content they provide in accordance with the law, and the platform shall
+                not assume any responsibility. The content uploaded by the user only
+                represents the author's viewpoint and does not represent the platform's
+                viewpoint. The platform has the right to modify and interpret this
+                statement. If there are any changes, the user will be notified in an
+                appropriate manner. The user's continued use of the game service is
+                deemed to have accepted the modified declaration
             </div>
-          </div>
+            <div class="policy">
+                <a href="./PrivacyPolicy.html">Privacy Policy</a>
+                <span> &nbsp; | &nbsp;</span>
+                <a href="./TermsofService.html">Terms-of Service</a>
+            </div>
         </div>
-      </div>
 
-      <!-- Additional editorial content to strengthen page substance for SEO/AdSense -->
-      <section class="bs-docs-section" id="about-mbti">
-        <h2>What Is MBTI?</h2>
-        <p>
-          The Myers–Briggs Type Indicator (MBTI) is a personality framework that groups people into
-          16 types based on four dichotomies: Extraversion (E) vs. Introversion (I), Sensing (S) vs. Intuition (N),
-          Thinking (T) vs. Feeling (F), and Judging (J) vs. Perceiving (P). MBTI does not measure ability or mental health;
-          it summarizes preferences in how you gain energy, process information, make decisions, and approach daily life.
-        </p>
-        <ul>
-          <li><strong>Energy:</strong> E or I – where attention and energy are directed.</li>
-          <li><strong>Information:</strong> S or N – how you prefer to take in information.</li>
-          <li><strong>Decisions:</strong> T or F – the lens you rely on to evaluate options.</li>
-          <li><strong>Lifestyle:</strong> J or P – how you like to organize your outer world.</li>
-        </ul>
-      </section>
 
-      <section class="bs-docs-section" id="how-it-works">
-        <h2>How Our MBTI Test Works</h2>
-        <ol>
-          <li>Answer 93 statements by selecting the option that best fits your usual preference.</li>
-          <li>Your raw choices are tallied into the four MBTI dimensions (E–I, S–N, T–F, J–P).</li>
-          <li>We compute your most likely type and provide links to detailed type profiles.</li>
-          <li>On borderline results we show the top two candidates to encourage reflection.</li>
-        </ol>
-        <p>
-          Tip: answer based on long‑term, natural behavior rather than temporary roles at work or school.
-        </p>
-      </section>
 
-      <section class="bs-docs-section" id="iq-vs-mbti">
-        <h2>IQ Test vs. MBTI: What’s the Difference?</h2>
-        <p>
-          An <em>IQ test</em> estimates problem‑solving performance (logical, spatial, numerical), while <em>MBTI</em> describes
-          preference patterns. They answer different questions: IQ looks at speed/accuracy under puzzles; MBTI explains
-          why certain environments feel energizing or draining. Many visitors use both: take the MBTI to understand
-          collaboration style, and the IQ test to practice reasoning.
-        </p>
-      </section>
 
-      <section class="bs-docs-section" id="use-cases">
-        <h2>Practical Uses of MBTI</h2>
-        <div>
-          <h3>Self‑Development</h3>
-          <p>Identify environments that support your focus and motivation, then set habits that match your type.</p>
-          <h3>Team Communication</h3>
-          <p>Knowing teammates' preferences reduces conflict and speeds up decision making.</p>
-          <h3>Career Exploration</h3>
-          <p>Type patterns can suggest tasks you may find energizing, but they should not be used as hiring criteria.</p>
-        </div>
-      </section>
 
-      <section class="bs-docs-section" id="faq">
-        <h2>FAQ</h2>
-        <h3>Is MBTI scientific?</h3>
-        <p>
-          MBTI has mixed evidence in academic research. We present it as a reflection tool, not a diagnostic exam.
-        </p>
-        <h3>Can my type change?</h3>
-        <p>
-          Preferences can look different across life stages. Results near the middle of a scale may shift with context.
-        </p>
-        <h3>Is my data stored?</h3>
-        <p>
-          We do not store individual answers on this page. See our <a href="privacy-policy.html">Privacy Policy</a> for details.
-        </p>
-      </section>
-
-      <section class="bs-docs-section" id="further-reading">
-        <h2>Further Reading</h2>
-        <ul>
-          <li><a href="personalities.html">16 Personalities Introduction</a> – overview of all types.</li>
-          <li><a href="MBTI.html">Start the MBTI Test</a> – begin the questionnaire now.</li>
-          <li><a href="IQ.html">IQ Test</a> – practice logical and numerical reasoning.</li>
-        </ul>
-      </section>
-
-      <!-- Optional structured data to help search engines understand the page purpose -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Free MBTI Test & Zodiac Signs | Horoscope & MBTI",
-        "description": "Take a free MBTI personality test and read editorial guides about the 16 types, how the test works, and FAQs.",
-        "url": "https://traitcheck.club/",
-        "mainEntity": {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {"@type": "Question","name": "Is MBTI scientific?","acceptedAnswer": {"@type": "Answer","text": "MBTI is a reflection tool with mixed research evidence; it is not a clinical assessment."}},
-            {"@type": "Question","name": "Can my type change?","acceptedAnswer": {"@type": "Answer","text": "Borderline results may vary across roles and life stages."}}
-          ]
-        }
-      }
-      </script>
-      <footer>
-        <div class="footer-container">
-          <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
-          </div>
-          <p>&copy; 2025 Horoscope & MBTI. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.querySelector('.search-button');
-        const searchTags = document.querySelector('.search-tags');
-        const searchNotification = document.querySelector('.search-notification');
-        const tags = document.querySelectorAll('.search-tag');
-        
-        // 显示提示信息的函数
-        function showNotification() {
-          searchNotification.style.display = 'block';
-          searchTags.style.display = 'none';
-          
-          // 3秒后自动隐藏提示
-          setTimeout(() => {
-            searchNotification.style.display = 'none';
-          }, 3000);
-        }
-        
-        // 搜索函数
-        function performSearch(searchText) {
-          const query = searchText.toLowerCase().trim();
-          const matchedTags = Array.from(tags).filter(tag => {
-            const tagText = tag.textContent.toLowerCase();
-            return tagText.includes(query);
-          });
-          
-          if (matchedTags.length > 0) {
-            searchNotification.style.display = 'none';
-            tags.forEach(tag => {
-              const tagText = tag.textContent.toLowerCase();
-              if (tagText.includes(query)) {
-                tag.style.display = 'inline-flex';
-              } else {
-                tag.style.display = 'none';
-              }
-            });
-            searchTags.style.display = 'flex';
-            return matchedTags;
-          } else {
-            showNotification();
-            return [];
-          }
-        }
-        
-        // 点击搜索按钮
-        searchButton.addEventListener('click', function() {
-          const query = searchInput.value.trim();
-          if (query === '') return;
-          
-          const matchedTags = performSearch(query);
-          if (matchedTags.length > 0) {
-            const url = matchedTags[0].getAttribute('data-url');
-            window.location.href = url;
-          }
-        });
-        
-        // 点击其他地方时隐藏所有弹出元素
-        document.addEventListener('click', function(e) {
-          if (!searchTags.contains(e.target) && 
-              !searchNotification.contains(e.target) &&
-              e.target !== searchInput && 
-              e.target !== searchButton && 
-              !searchButton.contains(e.target)) {
-            searchTags.style.display = 'none';
-            searchNotification.style.display = 'none';
-          }
-        });
-        
-        // 输入时实时搜索
-        searchInput.addEventListener('input', function() {
-          if (this.value.trim() === '') {
-            tags.forEach(tag => tag.style.display = 'inline-flex');
-            searchTags.style.display = 'none';
-            return;
-          }
-          performSearch(this.value);
-        });
-        
-        // 点击标签时跳转
-        tags.forEach(tag => {
-          tag.addEventListener('click', function() {
-            const url = this.getAttribute('data-url');
-            window.location.href = url;
-          });
-        });
-        
-        // 回车键触发搜索
-        searchInput.addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-            searchButton.click();
-          }
-        });
-      });
-    </script>
-  </body>
+</body>
+<script type="module">
+    import { getGamesListApi } from "./assets/js/business.js";
+    let gamesListIndex = 0
+    let GameList = await getGamesListApi({ num: 50 });
+    GameList.slice(0, gamesListIndex += 10).forEach((item) => {
+        const swiperSlide = document.createElement('swiper-slide');
+        swiperSlide.innerHTML = `
+        <a href="play.html?title=${item.title}">
+            <img src="${item.thumb}" alt="">
+        </a>`;
+        document.querySelector('.gameSwiper').appendChild(swiperSlide);
+    });
 
-  <!-- gtag -->
+
+    const swiperEl = document.querySelector('swiper-container')
+
+    const params = {
+        injectStyles: [`
+        .swiper{
+           padding-bottom: 30px; /* 为pagination留出空间 */
+        }
+        .swiper-pagination{
+            --swiper-pagination-bottom: 0px;
+            // transform:translateY(50px);
+        }
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: var(--color-adjacent);
+        }
+  `],
+        pagination: {
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + "</span>";
+            },
+        },
+    }
+
+    Object.assign(swiperEl, params)
+
+    swiperEl.initialize();
+
+    let hotGameList = GameList.slice(gamesListIndex, gamesListIndex += 6)
+    hotGameList.forEach((item) => {
+        const hotGameItem = document.createElement('div');
+        hotGameItem.className = 'game-item';
+        hotGameItem.innerHTML = `
+            <a href="play.html?title=${item.title}">
+                <img src="${item.thumb}" alt="">
+                <div class="font3 nameBox">${item.title}</div>
+            </a>
+      `;
+
+        document.querySelector('.hotGameGridBox').appendChild(hotGameItem);
+
+
+    })
+
+    let newGameList = GameList.slice(gamesListIndex, gamesListIndex += 24)
+    newGameList.forEach((item) => {
+        const newGameItem = document.createElement('div');
+        newGameItem.className = 'game-item';
+        newGameItem.innerHTML = `
+            <a href="play.html?title=${item.title}">
+                <img src="${item.thumb}" alt="">
+                 <div class="font3 nameBox">${item.title}</div>
+            </a>
+            `;
+        document.querySelector('.newGameGridBox').appendChild(newGameItem);
+    })
+
+
+    document.querySelectorAll('.categoryName').forEach((item) => {
+        item.innerHTML = '3D'
+    })
+    let threeDGameList = await getGamesListApi({ num: 12, category: 3 });
+    threeDGameList.forEach((item) => {
+        const threeDGameItem = document.createElement('div');
+        threeDGameItem.className = 'game-item';
+        threeDGameItem.innerHTML = `
+            <a href="play.html?title=${item.title}">
+                <img src="${item.thumb}" alt="">
+                <div class="font3 nameBox">${item.title}</div>
+            </a>
+            `;
+
+
+        document.querySelector('.threeDGameGridBox').appendChild(threeDGameItem);
+    })
+
+    // 关闭首评加载动画的时机
+    document.querySelector('.indexPage').classList.toggle('loadingAnimation', false)
+
+
+    import("./assets/js/business.js").then((res) => {
+
+        document.querySelector('.dropdown-btn').addEventListener('click', function () {
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
+
+        });
+
+        window.addEventListener('click', function (e) {
+            const dropdown = document.querySelector('.dropdown');
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+
+        let menuFloatContent = document.querySelector('.dropdown-content')
+        res.getGamesListCategory
+            .forEach((item, index) => {
+                let div = document.createElement('div')
+                div.className = 'categoryItem font1'
+                div.setAttribute('data-category', item)
+                div.onclick = async function () {
+                    let category = index + 1;
+                    let threeDGameList = await getGamesListApi({ num: 12, category });
+                    document.querySelector('.threeDGameGridBox').innerHTML = '';
+                    threeDGameList.forEach((item) => {
+                        const threeDGameItem = document.createElement('div');
+                        threeDGameItem.className = 'game-item';
+                        threeDGameItem.innerHTML = `
+                                <a href="play.html?title=${item.title}">
+                                    <img src="${item.thumb}" alt="">
+                                    <div class="font3 nameBox">${item.title}</div>
+                                </a>
+                                `;
+                        document.querySelector('.threeDGameGridBox').appendChild(threeDGameItem);
+                    })
+                    document.querySelectorAll('.categoryName').forEach((item) => {
+                        item.innerHTML = this.getAttribute('data-category')
+                    })
+                    document.querySelector('.dropdown').classList.toggle('active', false);
+                }
+
+                div.innerHTML = `
+                        ${item}
+                    `
+                menuFloatContent.appendChild(div)
+            })
+    })
+
+    window.switchMenu = function () {
+        document.querySelector('.menuFloatContent').classList.toggle('hidden')
+
+    }
+</script>
+
+<!-- gtag -->
 
       <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ04DM97HK"></script>
@@ -649,4 +336,5 @@
         gtag('config', 'G-EQ04DM97HK');
       </script>
         
+
 </html>

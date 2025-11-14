@@ -1,0 +1,62 @@
+@import "./base.css";
+@import "./tool.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  all: unset;
+}
+
+body {
+  line-height: 1;
+  transition: all 0.5s;
+  background: white;
+}
+
+/* 通用页面布局 */
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+/* 通用页脚 */
+.footer {
+  background: #6b46c1;
+  color: white;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  margin: 0 1rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.copyright {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+

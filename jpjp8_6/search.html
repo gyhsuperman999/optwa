@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, user-scalable=no" />
+    <title>jpjp8.com</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="css/search.css">
+<title>jpjp8.com</title>
+</head>
+
+<body>
+    <div class="searchPage" id="searchPage">
+        <!-- 顶部导航 -->
+        <header class="header">
+            <div class="logo">
+                <a href="/"><img src="logo.png" alt="Games List"></a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- 游戏分类导航 -->
+        <nav class="game-categories">
+            <!-- 分类将通过JavaScript动态添加 -->
+        </nav>
+
+        <!-- 搜索区域 -->
+        <main class="search-container">
+            <!-- 搜索输入框 -->
+            <div class="search-input-wrapper">
+                <div class="search-input-box">
+                    <input type="text" id="searchInput" placeholder="Search games..." autofocus>
+                    <button type="button" class="search-btn" id="searchBtn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 搜索结果 -->
+            <div class="search-results" id="searchResults">
+                <!-- 游戏卡片将通过JavaScript动态添加 -->
+            </div>
+        </main>
+
+        <!-- 页脚信息 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/PrivacyPolicy.html">Privacy Policy</a>
+                    <a href="/TermsofService.html">Terms of Service</a>
+                </div>
+                <p class="copyright">© 2024 Games List. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { getGamesListApi, getGamesListCategory } from "./assets/js/business.js";
+
+        // 初始化分类导航
+        const gameCategories = document.querySelector(".game-categories");
+        getGamesListCategory.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.className = "category-item";
+            div.setAttribute("data-category", index + 1);
+            div.innerHTML = `
+                <img src="./assets/category/${item}.png" alt="${item} Games">
+                <span>${item}</span>
+            `;
+            
+            // 添加点击事件
+            div.addEventListener('click', () => {
+                window.location.href = `/?category=${index + 1}`;
+            });
+            
+            gameCategories.appendChild(div);
+        });
+
+        // 搜索功能
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+
+        // 防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // 搜索游戏
+        async function searchGames(searchValue) {
+            try {
+                // 显示加载状态
+                searchResults.innerHTML = '<div class="loading">Searching games...</div>';
+                
+                // 调用搜索接口
+                const games = await getGamesListApi({
+                    name: searchValue
+                });
+                
+
+                // 处理搜索结果
+                if (games && games.length > 0) {
+                    const gamesHTML = games.map(game => `
+                        <div class="game-card" onclick="window.location.href='play.html?title=${encodeURIComponent(game.title)}&id=${game.id}'">
+                            <img src="${game.thumb}" alt="${game.title}">
+                            <div class="game-card-content">
+                                <h3>${game.title}</h3>
+                                <p>${game.description || ''}</p>
+                            </div>
+                        </div>
+                    `).join('');
+                    searchResults.innerHTML = gamesHTML;
+                } else {
+                    searchResults.innerHTML = '<div class="no-results">No games found. Try different keywords.</div>';
+                }
+            } catch (error) {
+                console.error('Error searching games:', error);
+                searchResults.innerHTML = '<div class="error">Failed to search games. Please try again.</div>';
+            }
+        }
+
+        // 添加搜索事件监听
+        const debouncedSearch = debounce((value) => {
+            if (value.trim()) {
+                searchGames(value);
+            } else {
+                searchResults.innerHTML = ''; // 清空搜索结果
+            }
+        }, 500);
+
+        // 输入框事件
+        searchInput.addEventListener('input', (e) => {
+            debouncedSearch(e.target.value);
+        });
+
+        // 搜索按钮点击事件
+        searchBtn.addEventListener('click', () => {
+            if (searchInput.value.trim()) {
+                searchGames(searchInput.value);
+            }
+        });
+
+        // 回车搜索
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && searchInput.value.trim()) {
+                searchGames(searchInput.value);
+            }
+        });
+
+        // 获取URL中的搜索参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q');
+        if (searchQuery) {
+            searchInput.value = searchQuery;
+            searchGames(searchQuery);
+        }
+    </script>
+</body>
+
+<!-- gtag -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBLTN69RDP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QBLTN69RDP');
+</script>
+
+        
+
+</html>
